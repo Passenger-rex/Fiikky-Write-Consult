@@ -85,10 +85,6 @@ export default function Footer() {
           <p id="footer-copyright" className="font-sans text-[11px] text-neutral-500 uppercase tracking-[0.2em]">
             © 2024 FIKKY WRITE CONSULT. ALL RIGHTS RESERVED.
           </p>
-          <div className="flex justify-center gap-8 text-[11px] font-sans text-neutral-500 uppercase tracking-widest" id="footer-legal-links">
-            <a href="#" className="hover:text-text-dark transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-text-dark transition-colors">Terms of Service</a>
-          </div>
         </div>
 
       </div>

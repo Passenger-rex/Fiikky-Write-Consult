@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ArrowRight, ChevronRight, PenTool, Radio, Layout, CheckCircle } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import CountUp from "./CountUp";
 
 export default function About() {
   const [activeTab, setActiveTab] = useState<number>(0);
@@ -83,7 +84,7 @@ export default function About() {
             
             <div id="about-description" className="font-sans text-text-muted space-y-6 leading-relaxed">
               <p>
-                Aaron Fikayomi is a multi-award-winning writer, author, and ghostwriter living with a physical disability that affects her mobility. Through Fikky Write Consult, she has turned her limitations into a lighthouse — helping others birth their stories, heal through writing, and walk in purpose with confidence.
+                Aaron Fikayomi is a multi-award-winning writer, author, and ghostwriter living with a physical disability that affects her mobility. Through Fikky Write Consult, she has turned her limitations into a lighthouse, helping others birth their stories, heal through writing, and walk in purpose with confidence.
               </p>
               <p>
                 Her writing is raw, faith-filled, emotionally intelligent, and deeply compassionate. She leads every project with a sense of mission and creativity that reflects her personal journey and her unshakable belief that words can heal. At the intersection of storytelling, healing, and purpose-driven publishing, she guides clients to birth timeless masterpieces.
@@ -135,6 +136,34 @@ export default function About() {
               To support individuals in achieving their writing and publishing goals by providing creative, engaging, and enlightening expert services that nurture ideas into completed publications of immense intellectual worth.
             </p>
           </div>
+        </motion.div>
+
+        {/* Impact Metrics Component */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6 }}
+          className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6"
+        >
+          <CountUp
+            end={25}
+            suffix="+"
+            title="Books Authored & Edited"
+            description="Ghostwritten and edited works published with confidence in various genres across Nigeria, the UK, and the USA."
+          />
+          <CountUp
+            end={15}
+            suffix="+"
+            title="Writers Trained"
+            description="Aspiring writers and content creators trained through personalized, hands-on writing coaching and mentoring."
+          />
+          <CountUp
+            end={100}
+            suffix="+"
+            title="Impactful Post & Campaigns"
+            description="Created powerful stories and viral content for social impact, faith-based movements, and trauma healing projects."
+          />
         </motion.div>
 
         {/* Dynamic Interactive Editorial Process component */}

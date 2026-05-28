@@ -1,75 +1,58 @@
 import React from "react";
-import { ArrowRight, BookOpen, Clock, Award } from "lucide-react";
-import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 
-interface HeroProps {
-  onNavigate: (sectionId: string) => void;
-}
-
-export default function Hero({ onNavigate }: HeroProps) {
+export default function Hero() {
   return (
-    <section id="hero" className="relative pt-44 pb-32 px-6 md:px-8 bg-surface-bg overflow-hidden flex flex-col justify-center min-h-[90vh]">
+    <section id="hero" className="relative pt-24 pb-24 px-6 md:px-8 bg-surface-bg overflow-hidden flex flex-col justify-center min-h-[50vh]">
       {/* Editorial Watermark background */}
       <div className="absolute right-[-10%] top-[10%] text-[24vw] font-serif font-extrabold text-neutral-200/20 select-none pointer-events-none tracking-tighter leading-none hidden xl:block">
         LEGACY
       </div>
 
-      <div className="max-w-[1200px] mx-auto w-full text-center relative z-10">
-        <motion.div
+      <div className="max-w-[1000px] mx-auto w-full text-center relative z-10">
+        <div
           id="hero-badge-container"
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-block border-b border-primary mb-8"
+          className="inline-block border-b border-primary mb-3"
         >
           <p className="font-sans text-xs md:text-sm text-primary uppercase tracking-[0.25em] pb-3 font-semibold">
             Crafting Intellectual Excellence
           </p>
-        </motion.div>
+        </div>
 
-        <motion.h1
+        <h1
           id="hero-title"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
           className="font-serif text-4xl md:text-7xl lg:text-8xl leading-[1.1] mb-8 text-text-dark max-w-5xl mx-auto tracking-tight font-bold"
         >
           Turn Your Ideas Into <br />
           <span className="italic font-normal text-primary">Published Books.</span>
-        </motion.h1>
+        </h1>
 
-        <motion.p
+        <p
           id="hero-subtitle"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-sans text-lg md:text-xl text-text-muted max-w-3xl mx-auto mb-12 leading-relaxed font-light"
+          className="font-sans text-base md:text-lg text-text-muted max-w-3xl mx-auto mb-12 leading-relaxed font-light"
         >
           Fikky Write Consult is a premium writing, ghostwriting, and publishing agency founded by award-winning author <span className="font-semibold text-text-dark">Aaron Fikayomi</span>. We transform raw, insightful concepts into enduring literary legacies.
-        </motion.p>
+        </p>
 
-        <motion.div
+        <div
           id="hero-buttons"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
           className="flex flex-col sm:flex-row justify-center items-center gap-5 md:gap-6"
         >
-          <button
-            id="hero-view-work-btn"
-            onClick={() => onNavigate("portfolio")}
+          <Link
+            id="hero-view-work-link"
+            to="/portfolio"
             className="w-full sm:w-auto bg-primary text-white border border-primary px-10 py-5 font-sans text-xs uppercase tracking-[0.2em] font-bold text-center hover:bg-primary-hover transition-all duration-300 shadow-sm outline-none"
           >
             View My Work
-          </button>
-          <button
-            id="hero-contact-btn"
-            onClick={() => onNavigate("contact")}
+          </Link>
+          <Link
+            id="hero-contact-link"
+            to="/contact"
             className="w-full sm:w-auto border-2 border-text-dark bg-transparent text-text-dark px-10 py-5 font-sans text-xs uppercase tracking-[0.2em] font-bold text-center hover:bg-text-dark hover:text-white transition-all duration-300"
           >
             Get in Touch
-          </button>
-        </motion.div>
+          </Link>
+        </div>
       </div>
     </section>
   );

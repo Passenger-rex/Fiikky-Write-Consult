@@ -1,124 +1,134 @@
 import React, { useState } from "react";
 import { PortfolioItem } from "../types";
-import { Search, X, ArrowUpRight, BookOpen, Calendar } from "lucide-react";
+import { Search, X, ArrowUpRight, BookOpen, Calendar, Download } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 export default function Portfolio() {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [selectedProject, setSelectedProject] = useState<PortfolioItem | null>(null);
+  
+  const [downloadUrl, setDownloadUrl] = useState<string>("/FIKKY.pdf");
 
   const portfolioItems: PortfolioItem[] = [
     {
       id: "jesus-is-the-balm",
       title: "Jesus is the Balm: From Pain to Purpose",
-      author: "Ta'Niya Wallace",
+      author: "Brenda Miller",
       category: "Book Publishing",
-      description: "A deeply resonant memoir and trauma healing narrative helping readers transform deep suffering into spiritual purpose.",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDPj4Y-UGlgFkIfcJSiCXEhAw2gA5hQfSuFQo9dV2_eaALiSeYuoJpkXjHeVdyYaGuO6KR2aspAgJyIRIjAtYzdkFOiGbxJvHjXPx4EUI1PM-oSKSQgrWgtA4chT-UJkFobkGVqxi2cLFEbi0EdV9NoBl_JeDJ6Cf_ZkQRQaV5koPofW3SLtQD4tDFfQDzAR_gMn7MCdFW0IDutDYZP_SD36F9lnBDlRMQs6GgW7A3yY_Y5iUatwe1baPmbBBHjpJKrAffnrmeaHpQ",
-      imageAlt: "A vintage journal and leather book with a gold nib pen",
-      fullStory: `Jesus is the Balm: From Pain to Purpose is a masterpiece written in close collaboration with Ta'Niya Wallace. It focuses on trauma healing, faith, and the process of recovering from childhood wounds to step into supreme spiritual destiny.
-
-Fikky Write Consult acted as an empathetic "literary midwife" on this project, working side-by-side with Ta'Niya. Through our specialized speech-to-text capture methodology and weekly accountability workshops, we extracted deep emotional truths and structured them into a beautifully flowing manuscripts.
-
-Since launch, the book has became an anchor-point of healing for faith communities in the United States, providing a practical framework to address unresolved pain.`
+      description: "An inspiring journey of moving from pain to purpose, finding grace through challenges.",
+      image: "https://images-na.ssl-images-amazon.com/images/P/B0DY63B84N.01.LZZZZZZZ.jpg",
+      imageAlt: "Jesus is the Balm Cover",
+      fullStory: `A profoundly emotional and spiritually uplifting book by Brenda Miller focusing on navigating life's painful struggles and discovering true purpose through faith.`
     },
     {
-      id: "crushed",
-      title: "Crushed",
-      author: "Barr. Olubunmi Babatunde",
-      category: "Book Publishing",
-      description: "A profound testimonial publication exploring the themes of faith, resilience, and executive courage under trial.",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDPj4Y-UGlgFkIfcJSiCXEhAw2gA5hQfSuFQo9dV2_eaALiSeYuoJpkXjHeVdyYaGuO6KR2aspAgJyIRIjAtYzdkFOiGbxJvHjXPx4EUI1PM-oSKSQgrWgtA4chT-UJkFobkGVqxi2cLFEbi0EdV9NoBl_JeDJ6Cf_ZkQRQaV5koPofW3SLtQD4tDFfQDzAR_gMn7MCdFW0IDutDYZP_SD36F9lnBDlRMQs6GgW7A3yY_Y5iUatwe1baPmbBBHjpJKrAffnrmeaHpQ",
-      imageAlt: "An open scripture with sunlight catching the pages",
-      fullStory: `Crushed is a raw, emotional biography written by renowned counsel Barr. Olubunmi Babatunde. This text documents the high stakes of personal faith when navigating legal trials, systemic pressure, and spiritual refinement.
-
-Under the direct editorial guidance of Aaron Fikayomi, Fikky Write Consult completed complete Developmental Editing checks. We examined key theme placements, refined legal timelines, polished copy-editing flows, and formatted the printed book margins.
-
-The result is a highly impactful, premium paperback and digital edition that continues to rank prominently among narrative circles in Nigeria.`
-    },
-    {
-      id: "mountain-top-devotional",
-      title: "Mountain Top Devotional",
-      author: "Dr. David Adeoye Abodunrin",
-      category: "Co-Publishing",
-      description: "A structured, premium annual spiritual guidebook designed for daily growth, prayer outlines, and scripture studies.",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDPj4Y-UGlgFkIfcJSiCXEhAw2gA5hQfSuFQo9dV2_eaALiSeYuoJpkXjHeVdyYaGuO6KR2aspAgJyIRIjAtYzdkFOiGbxJvHjXPx4EUI1PM-oSKSQgrWgtA4chT-UJkFobkGVqxi2cLFEbi0EdV9NoBl_JeDJ6Cf_ZkQRQaV5koPofW3SLtQD4tDFfQDzAR_gMn7MCdFW0IDutDYZP_SD36F9lnBDlRMQs6GgW7A3yY_Y5iUatwe1baPmbBBHjpJKrAffnrmeaHpQ",
-      imageAlt: "A majestic mountain range with sunlight rising over the peaks",
-      fullStory: `Mountain Top Devotional stands as a premier yearly devotional guide authored by Dr. David Adeoye Abodunrin. It houses 365 daily insights, reflection challenges, and target prayer lines designed to focus minds on deep biblical keys.
-
-Our team at Fikky Write Consult provided full-cycle layout, typesetting, and print production management. This required managing rigid formatting grids, indexing scripture citations, and coordinating global print shipments.
-
-This devotional guide is printed annually with a beautiful premium soft touch cover, representing our highest volume layout assignment and serving thousands of believers globally.`
+      id: "crushed-a-testament-to-grace",
+      title: "Crushed: A Testament to Grace",
+      author: "Aaron Fikayomi",
+      category: "Ghostwriting & Editing",
+      description: "A testament to enduring grace, healing from trauma, and trusting the spiritual process.",
+      image: "https://images-na.ssl-images-amazon.com/images/P/B0BVQHRXNX.01.LZZZZZZZ.jpg",
+      imageAlt: "Crushed Cover",
+      fullStory: `Written by Fikky Write Consult's founder Aaron Fikayomi, Crushed is a powerful narrative on overcoming the darkest trials of life by understanding and leaning into the limitless grace that restores us.`
     },
     {
       id: "dear-mummy",
-      title: "Dear Mummy",
-      author: "Omole Oluwaseun Remilekun",
-      category: "Layout & Design",
-      description: "A heartwarming and beautiful children's book featuring custom illustration sizing, playful typography, and parenting insights.",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDPj4Y-UGlgFkIfcJSiCXEhAw2gA5hQfSuFQo9dV2_eaALiSeYuoJpkXjHeVdyYaGuO6KR2aspAgJyIRIjAtYzdkFOiGbxJvHjXPx4EUI1PM-oSKSQgrWgtA4chT-UJkFobkGVqxi2cLFEbi0EdV9NoBl_JeDJ6Cf_ZkQRQaV5koPofW3SLtQD4tDFfQDzAR_gMn7MCdFW0IDutDYZP_SD36F9lnBDlRMQs6GgW7A3yY_Y5iUatwe1baPmbBBHjpJKrAffnrmeaHpQ",
-      imageAlt: "A stack of colorful children's illustrated storybooks",
-      fullStory: `Dear Mummy is a magnificent family legacy book written by child-development advocate Omole Oluwaseun Remilekun. It explores the magical perspective of childhood communication and the bond shared between mothers and their young children.
-
-Fikky Write Consult took charge of the physical page orchestration: we coordinated full typographic pairing, designed colorful caption frames, and ensured illustration contrast met premium printing standards.
-
-This production has been celebrated inside early childhood parenting workshops and has established Oluwaseun's kids-literature catalog.`
+      title: "Dear Mummy: Letters to my future children",
+      author: "Fikayomi Aaron",
+      category: "Content Strategy",
+      description: "A beautiful collection of letters filled with wisdom and vulnerability.",
+      image: "https://images-na.ssl-images-amazon.com/images/P/B08KNP7WTT.01.LZZZZZZZ.jpg",
+      imageAlt: "Dear Mummy Cover",
+      fullStory: `In this touching book, Fikayomi Aaron shares heartfelt letters meant for her future children, capturing vital life lessons, faith-filled advice, and inter-generational wisdom.`
     },
     {
       id: "promise-keepers",
       title: "Promise Keepers",
-      author: "Pastor Dayo Adeyemi",
-      category: "Book Publishing",
-      description: "An authoritative guide to covenant-filled leadership and marital fidelity, distributed on Selar and Amazon Direct.",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDPj4Y-UGlgFkIfcJSiCXEhAw2gA5hQfSuFQo9dV2_eaALiSeYuoJpkXjHeVdyYaGuO6KR2aspAgJyIRIjAtYzdkFOiGbxJvHjXPx4EUI1PM-oSKSQgrWgtA4chT-UJkFobkGVqxi2cLFEbi0EdV9NoBl_JeDJ6Cf_ZkQRQaV5koPofW3SLtQD4tDFfQDzAR_gMn7MCdFW0IDutDYZP_SD36F9lnBDlRMQs6GgW7A3yY_Y5iUatwe1baPmbBBHjpJKrAffnrmeaHpQ",
-      imageAlt: "A clean modern library workspace setup",
-      fullStory: `Promise Keepers is a leadership-manual authored by faith-based thinker Pastor Dayo Adeyemi. It addresses modern fidelity, spiritual covenant holding, and the importance of leadership accountability.
-
-We managed the full manuscript proofreading, developmental polishing, and direct publishing systems for this book. Fikky Write Consult onboarded Pastor Dayo on global publication platforms, publishing the book directly to both Amazon Direct KDP and Selar hubs.
-
-This smooth process allowed global audiences in Nigeria, the UK, and the US to access and download the book in paperback and e-book editions easily.`
+      author: "Akintunde Alexander Olanrewaju",
+      category: "Publishing",
+      description: "A deeply resonant book emphasizing the power and importance of keeping covenants.",
+      image: "https://images-na.ssl-images-amazon.com/images/P/B0FR2L5PRJ.01.LZZZZZZZ.jpg",
+      imageAlt: "Promise Keepers Cover",
+      fullStory: `Expertly ghostwritten and published by Fikky Write Consult, Promise Keepers dives into the importance of integrity, covenant-keeping, and the foundational pillars of trust in both natural and spiritual relationships.`
     },
     {
       id: "finance-in-marriage",
-      title: "Finance In Marriage",
+      title: "Finance in Marriage",
       author: "Peter Asuata",
-      category: "Book Publishing",
-      description: "Comprehensive publishing and production management for this essential guide to marital finance.",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDPj4Y-UGlgFkIfcJSiCXEhAw2gA5hQfSuFQo9dV2_eaALiSeYuoJpkXjHeVdyYaGuO6KR2aspAgJyIRIjAtYzdkFOiGbxJvHjXPx4EUI1PM-oSKSQgrWgtA4chT-UJkFobkGVqxi2cLFEbi0EdV9NoBl_JeDJ6Cf_ZkQRQaV5koPofW3SLtQD4tDFfQDzAR_gMn7MCdFW0IDutDYZP_SD36F9lnBDlRMQs6GgW7A3yY_Y5iUatwe1baPmbBBHjpJKrAffnrmeaHpQ",
-      imageAlt: "A macro photograph of a vintage typewriter",
-      fullStory: `Finance In Marriage is a comprehensive blueprint designed to bring alignment and absolute clarity to spouses managing shared economic futures. Authored by wealth advisor Peter Asuata, this book translates complex fiscal planning into actionable, trust-building marital workflows.
-
-Fikky Write Consult took this initiative through full Developmental Stage processes: from structuring raw chapter frameworks and developmental rewriting to secure full interior layout compilation and digital store deployment. 
-
-The resulting publication received deep industry reviews and continues to remain an authoritative asset inside spiritual and professional marital counseling catalogs worldwide.`
+      category: "Co-Publishing",
+      description: "Building and strengthening relationships through wise financial alignment.",
+      image: "https://images-na.ssl-images-amazon.com/images/P/9785100804.01.LZZZZZZZ.jpg",
+      imageAlt: "Finance in Marriage Cover",
+      fullStory: `Finance in Marriage: Building and Strengthening Relationship is a practical guide layout exploring the intricacies of handling money within matrimony.`
     },
     {
-      id: "hold-the-kids",
-      title: "Hold the Kids",
-      author: "Alexander Olanrewaju Akintunde",
-      category: "Layout & Design",
-      description: "Expert publishing services and professional interior layout design for this impactful publication.",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDPj4Y-UGlgFkIfcJSiCXEhAw2gA5hQfSuFQo9dV2_eaALiSeYuoJpkXjHeVdyYaGuO6KR2aspAgJyIRIjAtYzdkFOiGbxJvHjXPx4EUI1PM-oSKSQgrWgtA4chT-UJkFobkGVqxi2cLFEbi0EdV9NoBl_JeDJ6Cf_ZkQRQaV5koPofW3SLtQD4tDFfQDzAR_gMn7MCdFW0IDutDYZP_SD36F9lnBDlRMQs6GgW7A3yY_Y5iUatwe1baPmbBBHjpJKrAffnrmeaHpQ",
-      imageAlt: "Minimalist interior of a modern library",
-      fullStory: `Hold the Kids stands as an emotional, highly articulate reference handbook for modern parenting and early youth safeguards. Alexander Olanrewaju Akintunde brings deep experiential leadership into the narratives of this title.
-
-Fikky Write Consult's layout and design suite formulated a clean, responsive interior column layout, styling and balancing margins to optimize high readability. We implemented elegant typographic pairings that align specifically with child advocacy institutions.
-
-By maintaining pristine layout and low-contrast borders, the book was brought in as a primary educational resource across various community platforms.`
+      id: "365-faith-journal",
+      title: "365 Days Faith Bucket Journal",
+      author: "Fikayomi Aaron",
+      category: "Design & Layout",
+      description: "A daily devotional and journal mapping out 365 days of intentional faith-building exercises.",
+      image: "https://images-na.ssl-images-amazon.com/images/P/B0CZLMKG6F.01.LZZZZZZZ.jpg",
+      imageAlt: "Faith Bucket Journal Cover",
+      fullStory: `A beautifully designed daily journal offering 365 reflections. Created with a strong focus on typography, usability, and inspiring interior page designs.`
     },
     {
-      id: "comic-book-project",
-      title: "The Comic Book Project",
+      id: "submission-made-easy",
+      title: "Submission Made Easy: A Handbook for Women",
+      author: "Fikayomi Aaron",
+      category: "Ghostwriting & Editing",
+      description: "A thoughtful, contextual handbook exploring submission through a lens of grace.",
+      image: "https://images-na.ssl-images-amazon.com/images/P/B0BWV333MY.01.LZZZZZZZ.jpg",
+      imageAlt: "Submission Made Easy Cover",
+      fullStory: `This handbook provides clarity on deeply misunderstood topics, using Aaron's signature emotionally-intelligent writing to address relationships from a faith-based perspective.`
+    },
+    {
+      id: "the-sons-light",
+      title: "The Son's Light",
       author: "Missionary Brenda Miller",
-      category: "Layout & Design",
-      description: "Returning client success: Dynamic visual story layout, dialogue bubble placement, and print consultation.",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDPj4Y-UGlgFkIfcJSiCXEhAw2gA5hQfSuFQo9dV2_eaALiSeYuoJpkXjHeVdyYaGuO6KR2aspAgJyIRIjAtYzdkFOiGbxJvHjXPx4EUI1PM-oSKSQgrWgtA4chT-UJkFobkGVqxi2cLFEbi0EdV9NoBl_JeDJ6Cf_ZkQRQaV5koPofW3SLtQD4tDFfQDzAR_gMn7MCdFW0IDutDYZP_SD36F9lnBDlRMQs6GgW7A3yY_Y5iUatwe1baPmbBBHjpJKrAffnrmeaHpQ",
-      imageAlt: "Vintage structural layout blueprint",
-      fullStory: `The Comic Book Project is illustrative of Fikky Write Consult's versatility in visual publishing. Under Missionary Brenda Miller's leadership, we handled specialized comic typesetting, panel flow consulting, and digital alignment checks.
-
-The layout maximizes grid proportions, implementing customized lettering fonts to retain narrative pacing while ensuring high contrast for global print distribution. 
-
-Our collaborative approach led Missionary Brenda's team to establish the brand securely, resulting in returning contracts and premium recognition across experimental graphic novel circles.`
+      category: "Book Publishing",
+      description: "Devotional guidance and encouragement for staying in God's light.",
+      image: "https://images-na.ssl-images-amazon.com/images/P/B0DRSXPPLX.01.LZZZZZZZ.jpg",
+      imageAlt: "The Sons Light Cover",
+      fullStory: `Working diligently with Missionary Brenda Miller to bring her devotional guidance and encouragement into a polished publication.`
+    },
+    {
+      id: "18-years-and-a-day",
+      title: "18 Years and a Day",
+      author: "Aaron Fikayomi",
+      category: "Memoir",
+      description: "A personal timeline exploring life, healing, and moving forward.",
+      image: "https://images-na.ssl-images-amazon.com/images/P/B0DXQ45G6Y.01.LZZZZZZZ.jpg",
+      imageAlt: "18 Years and a Day Cover",
+      fullStory: `A captivating timeline of life experiences and wisdom, professionally structured and formatted to guide the reader through an 18-year journey of transformation.`
+    },
+    {
+      id: "is-disability-truly-a-burden",
+      title: "Is Disability Truly A Burden?",
+      author: "Fikayomi Aaron",
+      category: "Social Impact Publishing",
+      description: "Empowering perspectives on ability, purpose, and changing societal narratives.",
+      image: "https://images-na.ssl-images-amazon.com/images/P/9786160118.01.LZZZZZZZ.jpg",
+      imageAlt: "Is Disability Truly A Burden Cover",
+      fullStory: `As a multi-award-winning author living with a physical disability, Aaron addresses the narrative around disability directly—teaching caregivers and people living with disabilities how to shift their mindset from burden to blessing.`
+    },
+    {
+      id: "spiritual-sentinels",
+      title: "Spiritual Sentinels - The Family Crusade",
+      author: "Brenda Miller",
+      category: "Book Publishing",
+      description: "A clarion call for family intercession and spiritual guardianship.",
+      image: "https://images-na.ssl-images-amazon.com/images/P/B0FGCG2724.01.LZZZZZZZ.jpg",
+      imageAlt: "Spiritual Sentinels Cover",
+      fullStory: `We edited and laid out this incredibly powerful book by Brenda Miller focusing on creating strong family intercessors and equipping readers for the spiritual frontline.`
+    },
+    {
+      id: "charityes-garden",
+      title: "Charitye's Garden of Friends",
+      author: "Brenda Miller",
+      category: "Children's Book Design",
+      description: "A delightful story about friendship, faith, and growing together.",
+      image: "https://images-na.ssl-images-amazon.com/images/P/B0DT3JSDDY.01.LZZZZZZZ.jpg",
+      imageAlt: "Charitye's Garden Cover",
+      fullStory: `A beautifully illustrated and designed children's book that helps instil core values of kindness, community, and friendship in younger readers.`
     }
   ];
 
@@ -141,8 +151,18 @@ Our collaborative approach led Missionary Brenda's team to establish the brand s
               Recent &amp; Relevant Work
             </h2>
             <p id="portfolio-subtitle" className="font-sans text-text-muted max-w-xl leading-relaxed">
-              A showcase of literary projects and content strategies that have defined our clients' success. Includes returning client successes like the Comic Book Project for Brenda Miller.
+              Some of our published and ghostwritten works include: Crushed, Mountain Top Devotional, Dear Mummy, 365 Days Journal of Faith, From Grass to Grace, Loving Mr. Right, In the Sonslight, Promise Keepers, 18 Years and a Day, Is Disability Truly A Burden?, Where Do We Go From Here?, Charityes Garden of Friends, and more.
             </p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4 items-center mt-6 md:mt-0">
+            <a
+              id="download-portfolio-btn"
+              href={downloadUrl}
+              download="FIKKY.pdf"
+              className="bg-primary text-white hover:bg-primary-hover px-6 py-4 font-sans text-xs uppercase tracking-wider font-bold transition-all active:scale-[0.98] flex items-center justify-center w-full sm:w-auto gap-2 border border-primary outline-none cursor-pointer whitespace-nowrap"
+            >
+              <Download className="w-4 h-4" /> Download Portfolio
+            </a>
           </div>
         </div>
 
@@ -248,22 +268,22 @@ Our collaborative approach led Missionary Brenda's team to establish the brand s
                 className="bg-white border border-text-dark max-w-3xl w-full max-h-[90vh] overflow-y-auto"
               >
                 {/* Image Banner */}
-                <div className="relative aspect-video">
+                <div className="relative aspect-video overflow-hidden">
                   <img
                     src={selectedProject.image}
                     alt={selectedProject.imageAlt}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover blur-2xl scale-110 opacity-50 bg-black"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-900 via-neutral-900/60 to-transparent p-6 md:p-8 text-left">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-blue-300">
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-900 via-neutral-900/60 to-transparent p-6 md:p-8 text-left h-full flex flex-col justify-end">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-black bg-white/90 px-2.5 py-1 rounded-sm inline-block self-start mb-2">
                       {selectedProject.category} Case Study
                     </span>
                     <h3 className="font-serif text-2xl md:text-3xl text-white font-bold mt-1">
                       {selectedProject.title}
                     </h3>
-                    <p className="text-xs text-neutral-300 mt-1">
-                      Collaboratively led by Author <span className="text-white font-semibold">{selectedProject.author}</span>
+                    <p className="text-xs text-neutral-200 mt-2 font-medium">
+                      Collaboratively led by Author <span className="text-white font-bold">{selectedProject.author}</span>
                     </p>
                   </div>
                   <button

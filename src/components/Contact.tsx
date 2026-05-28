@@ -29,9 +29,9 @@ Email Address: ${email}
 Subject: ${subject}
 
 Message/Project Details:
----------------------------------------------
+
 ${message}
----------------------------------------------
+
 
 Thank you,
 ${name}`;
@@ -88,78 +88,81 @@ ${name}`;
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="bg-white p-8 md:p-12 text-text-dark border border-neutral-200 relative" 
+          className="bg-white p-8 md:p-12 text-text-dark shadow-sm relative rounded-xl" 
           id="contact-form-panel"
         >
           
           <form onSubmit={handleSubmit} className="space-y-8 text-left">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="space-y-2 flex flex-col">
-                <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-text-dark">Full Name</label>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              <div className="flex flex-col relative group">
                 <input
                   type="text"
-                  placeholder="John Doe"
+                  placeholder=" "
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
-                  className="w-full border-0 border-b border-neutral-300 p-0 pb-3 focus:ring-0 focus:border-primary bg-transparent text-sm text-text-dark focus:outline-none"
+                  className="w-full bg-transparent border-0 border-b border-neutral-200 px-0 py-3 text-base text-text-dark focus:border-primary focus:ring-0 outline-none peer transition-colors"
                 />
+                <label className="absolute left-0 top-3 text-sm text-neutral-400 font-sans uppercase tracking-widest transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-primary peer-valid:-top-4 peer-valid:text-xs peer-valid:text-neutral-500 pointer-events-none">Full Name</label>
               </div>
-              <div className="space-y-2 flex flex-col">
-                <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-text-dark">Email Address</label>
+              <div className="flex flex-col relative group">
                 <input
                   type="email"
-                  placeholder="john@example.com"
+                  placeholder=" "
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full border-0 border-b border-neutral-300 p-0 pb-3 focus:ring-0 focus:border-primary bg-transparent text-sm text-text-dark focus:outline-none"
+                  className="w-full bg-transparent border-0 border-b border-neutral-200 px-0 py-3 text-base text-text-dark focus:border-primary focus:ring-0 outline-none peer transition-colors"
                 />
+                <label className="absolute left-0 top-3 text-sm text-neutral-400 font-sans uppercase tracking-widest transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-primary peer-valid:-top-4 peer-valid:text-xs peer-valid:text-neutral-500 pointer-events-none">Email Address</label>
               </div>
             </div>
 
-            <div className="space-y-2 flex flex-col pt-2">
-              <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-text-dark">Subject</label>
+            <div className="flex flex-col relative group pt-2">
               <select
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
-                className="w-full border-0 border-b border-neutral-300 p-0 pb-3 focus:ring-0 focus:border-primary bg-transparent text-sm text-text-dark appearance-none focus:outline-none cursor-pointer"
+                className="w-full bg-transparent border-0 border-b border-neutral-200 px-0 py-3 text-base text-text-dark focus:border-primary focus:ring-0 outline-none peer transition-colors appearance-none cursor-pointer"
+                style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'16\' height=\'16\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3E%3Cpath d=\'m6 9 6 6 6-6\'/%3E%3C/svg%3E")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right 0 center' }}
               >
                 <option value="Book Publishing Inquiry">Book Publishing Inquiry</option>
                 <option value="Ghostwriting Package">Ghostwriting Package</option>
                 <option value="The Profitable Penman">The Profitable Penman</option>
                 <option value="Other Services">Other Services</option>
               </select>
+              <label className="absolute left-0 -top-4 text-xs text-neutral-500 font-sans uppercase tracking-widest pointer-events-none">Subject</label>
             </div>
 
-            <div className="space-y-2 flex flex-col pt-2">
-              <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-text-dark">Message</label>
+            <div className="flex flex-col relative group pt-4">
               <textarea
-                placeholder="Tell us about your project..."
+                placeholder=" "
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 required
                 rows={4}
-                className="w-full border-0 border-b border-neutral-300 p-0 pb-3 focus:ring-0 focus:border-primary bg-transparent text-sm text-text-dark resize-none focus:outline-none"
+                className="w-full bg-transparent border-0 border-b border-neutral-200 px-0 py-3 text-base text-text-dark focus:border-primary focus:ring-0 outline-none peer transition-colors resize-none"
               />
+              <label className="absolute left-0 top-3 text-sm text-neutral-400 font-sans uppercase tracking-widest transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-primary peer-valid:-top-4 peer-valid:text-xs peer-valid:text-neutral-500 pointer-events-none">Project Details</label>
             </div>
 
-            <button
-              id="submit-contact-form-btn"
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-primary text-white border border-primary py-5 font-sans text-xs uppercase tracking-widest font-bold hover:bg-primary-hover transition-all duration-300 active:scale-[0.98] outline-none cursor-pointer flex items-center justify-center gap-2 disabled:opacity-75 disabled:cursor-wait"
-            >
-              {isSubmitting ? (
-                <>
-                  <Clock className="w-3.5 h-3.5 animate-spin" /> Transmitting Details...
-                </>
-              ) : (
-                <>
-                  <Send className="w-3.5 h-3.5" /> Send Message
-                </>
-              )}
-            </button>
+            <div className="pt-2">
+              <button
+                id="submit-contact-form-btn"
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-primary text-white border-none rounded-lg py-4 font-sans text-xs uppercase tracking-widest font-bold hover:bg-primary-hover shadow-md hover:shadow-lg transition-all duration-300 active:scale-[0.98] outline-none cursor-pointer flex items-center justify-center gap-2 disabled:opacity-75 disabled:cursor-wait"
+              >
+                {isSubmitting ? (
+                  <>
+                    <Clock className="w-4 h-4 animate-spin" /> Transmitting Details...
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-4 h-4" /> Send Message
+                  </>
+                )}
+              </button>
+            </div>
           </form>
         </motion.div>
       </div>

@@ -1,9 +1,19 @@
-import React, { useState } from "react";
-import { Star, MessageSquare, Plus, PenTool, CheckCircle } from "lucide-react";
+import React, { useState, useRef } from "react";
+import { Star, MessageSquare, Plus, PenTool, CheckCircle, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { Testimonial } from "../types";
 
 export default function Testimonials() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollContainerRef.current) {
+      const { current } = scrollContainerRef;
+      const scrollAmount = current.clientWidth; // scroll exactly 1 item width
+      current.scrollBy({ left: direction === "left" ? -scrollAmount : scrollAmount, behavior: "smooth" });
+    }
+  };
+
   const [testimonials, setTestimonials] = useState<Testimonial[]>([
     {
       text: "Aaron made my story come alive with authenticity and grace. I will recommend Fikky Write Consult to any author.",
@@ -82,42 +92,58 @@ export default function Testimonials() {
           </p>
         </motion.div>
 
-        {/* 2 Column Quote block layout with stagger scroll animations */}
-        <motion.div 
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-80px" }}
-          variants={{
-            hidden: { opacity: 0 },
-            show: {
-              opacity: 1,
-              transition: {
-                staggerChildren: 0.08
-              }
-            }
-          }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left mb-16" 
-          id="testimonials-cards-grid"
-        >
-          {testimonials.map((t, idx) => (
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, y: 24 },
-                show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 15 } }
-              }}
-              key={idx}
-              className="border-l-4 border-primary pl-8 py-4 space-y-8 flex flex-col justify-between"
-            >
-              <p className="font-serif text-lg md:text-2xl text-text-muted italic leading-relaxed">
-                "{t.text}"
-              </p>
-              <footer className="font-sans text-xs uppercase tracking-widest font-bold text-text-dark">
-                <span>{t.author}</span>
-                {t.role && <span className="text-text-light block text-[10px] font-normal tracking-wide lowercase mt-0.5">{t.role}</span>}
-              </footer>
-            </motion.div>
-          ))}
-        </motion.div>
+        {/* Swipeable Testimonials Carousel Container */}
+        <div className="relative group mx-auto w-full max-w-4xl">
+          {/* Left Arrow (Desktop & Tablet) */}
+          <button 
+            onClick={() => scroll("left")}
+            className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md border border-neutral-200 text-text-dark hover:text-primary transition-colors p-3 rounded-full hidden sm:flex items-center justify-center"
+            aria-label="Previous testimonials"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            ref={scrollContainerRef}
+            className="flex overflow-x-auto gap-4 pb-8 mb-8 snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden w-full" 
+            id="testimonials-carousel"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {testimonials.map((t, idx) => (
+              <motion.div
+                key={idx}
+                className="w-full shrink-0 snap-center border border-neutral-100 bg-neutral-50/50 p-8 md:p-12 space-y-6 flex flex-col justify-center items-center text-center rounded-lg shadow-sm"
+              >
+                <div className="space-y-6 flex flex-col items-center">
+                  <div className="flex gap-1 justify-center">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                    ))}
+                  </div>
+                  <p className="font-serif text-xl md:text-2xl text-text-dark italic leading-relaxed max-w-2xl mx-auto">
+                    "{t.text}"
+                  </p>
+                </div>
+                <footer className="font-sans text-sm uppercase tracking-widest font-bold text-text-dark pt-6 mt-4 border-t border-neutral-200 w-full max-w-xs mx-auto">
+                  <span>{t.author}</span>
+                  {t.role && <span className="text-text-light block text-[10px] sm:text-xs font-normal tracking-wide lowercase mt-1.5">{t.role}</span>}
+                </footer>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Right Arrow (Desktop & Tablet) */}
+          <button 
+            onClick={() => scroll("right")}
+            className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md border border-neutral-200 text-text-dark hover:text-primary transition-colors p-3 rounded-full hidden sm:flex items-center justify-center"
+            aria-label="Next testimonials"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+        </div>
 
         {/* Interactive Experience Submission Toggle */}
         <div className="mt-12" id="client-review-box">
