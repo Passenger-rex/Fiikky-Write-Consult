@@ -2,11 +2,12 @@ export interface PortfolioItem {
   id: string;
   title: string;
   author: string;
-  category: 'Book Publishing' | 'Layout & Design' | 'Co-Publishing';
+  category: string;
   description: string;
   fullStory: string;
   image: string;
   imageAlt: string;
+  amazonUrl?: string;
 }
 
 export interface ServicePackage {

@@ -18,7 +18,8 @@ export default function Portfolio() {
       description: "An inspiring journey of moving from pain to purpose, finding grace through challenges.",
       image: "https://images-na.ssl-images-amazon.com/images/P/B0DY63B84N.01.LZZZZZZZ.jpg",
       imageAlt: "Jesus is the Balm Cover",
-      fullStory: `A profoundly emotional and spiritually uplifting book by Brenda Miller focusing on navigating life's painful struggles and discovering true purpose through faith.`
+      fullStory: `A profoundly emotional and spiritually uplifting book by Brenda Miller focusing on navigating life's painful struggles and discovering true purpose through faith.`,
+      amazonUrl: "https://www.amazon.com/Jesus-Balm-Purpose-Brenda-Miller/dp/B0DY63B84N"
     },
     {
       id: "crushed-a-testament-to-grace",
@@ -28,7 +29,8 @@ export default function Portfolio() {
       description: "A testament to enduring grace, healing from trauma, and trusting the spiritual process.",
       image: "https://images-na.ssl-images-amazon.com/images/P/B0BVQHRXNX.01.LZZZZZZZ.jpg",
       imageAlt: "Crushed Cover",
-      fullStory: `Written by Fikky Write Consult's founder Aaron Fikayomi, Crushed is a powerful narrative on overcoming the darkest trials of life by understanding and leaning into the limitless grace that restores us.`
+      fullStory: `Written by Fikky Write Consult's founder Aaron Fikayomi, Crushed is a powerful narrative on overcoming the darkest trials of life by understanding and leaning into the limitless grace that restores us.`,
+      amazonUrl: "https://www.amazon.com/Crushed-Testament-Grace-Aaron-Fikayomi-ebook/dp/B0BVQHRXNX"
     },
     {
       id: "dear-mummy",
@@ -38,7 +40,8 @@ export default function Portfolio() {
       description: "A beautiful collection of letters filled with wisdom and vulnerability.",
       image: "https://images-na.ssl-images-amazon.com/images/P/B08KNP7WTT.01.LZZZZZZZ.jpg",
       imageAlt: "Dear Mummy Cover",
-      fullStory: `In this touching book, Fikayomi Aaron shares heartfelt letters meant for her future children, capturing vital life lessons, faith-filled advice, and inter-generational wisdom.`
+      fullStory: `In this touching book, Fikayomi Aaron shares heartfelt letters meant for her future children, capturing vital life lessons, faith-filled advice, and inter-generational wisdom.`,
+      amazonUrl: "https://www.amazon.com/Dear-Mummy-Letters-Fikayomi-Aaron-ebook/dp/B08KNP7WTT"
     },
     {
       id: "promise-keepers",
@@ -48,7 +51,8 @@ export default function Portfolio() {
       description: "A deeply resonant book emphasizing the power and importance of keeping covenants.",
       image: "https://images-na.ssl-images-amazon.com/images/P/B0FR2L5PRJ.01.LZZZZZZZ.jpg",
       imageAlt: "Promise Keepers Cover",
-      fullStory: `Expertly ghostwritten and published by Fikky Write Consult, Promise Keepers dives into the importance of integrity, covenant-keeping, and the foundational pillars of trust in both natural and spiritual relationships.`
+      fullStory: `Expertly ghostwritten and published by Fikky Write Consult, Promise Keepers dives into the importance of integrity, covenant-keeping, and the foundational pillars of trust in both natural and spiritual relationships.`,
+      amazonUrl: "https://www.amazon.com/Promise-Keepers-Akintunde-Alexander-Olanrewaju/dp/B0FR2L5PRJ"
     },
     {
       id: "finance-in-marriage",
@@ -58,7 +62,8 @@ export default function Portfolio() {
       description: "Building and strengthening relationships through wise financial alignment.",
       image: "https://images-na.ssl-images-amazon.com/images/P/9785100804.01.LZZZZZZZ.jpg",
       imageAlt: "Finance in Marriage Cover",
-      fullStory: `Finance in Marriage: Building and Strengthening Relationship is a practical guide layout exploring the intricacies of handling money within matrimony.`
+      fullStory: `Finance in Marriage: Building and Strengthening Relationship is a practical guide layout exploring the intricacies of handling money within matrimony.`,
+      amazonUrl: "https://www.amazon.com/Finance-Marriage-Building-Strengthening-Relationship/dp/9785100804"
     },
     {
       id: "365-faith-journal",
@@ -68,7 +73,8 @@ export default function Portfolio() {
       description: "A daily devotional and journal mapping out 365 days of intentional faith-building exercises.",
       image: "https://images-na.ssl-images-amazon.com/images/P/B0CZLMKG6F.01.LZZZZZZZ.jpg",
       imageAlt: "Faith Bucket Journal Cover",
-      fullStory: `A beautifully designed daily journal offering 365 reflections. Created with a strong focus on typography, usability, and inspiring interior page designs.`
+      fullStory: `A beautifully designed daily journal offering 365 reflections. Created with a strong focus on typography, usability, and inspiring interior page designs.`,
+      amazonUrl: "https://www.amazon.com/365-Days-Bucket-List-Journal/dp/B0CZLMKG6F"
     },
     {
       id: "submission-made-easy",
@@ -78,7 +84,8 @@ export default function Portfolio() {
       description: "A thoughtful, contextual handbook exploring submission through a lens of grace.",
       image: "https://images-na.ssl-images-amazon.com/images/P/B0BWV333MY.01.LZZZZZZZ.jpg",
       imageAlt: "Submission Made Easy Cover",
-      fullStory: `This handbook provides clarity on deeply misunderstood topics, using Aaron's signature emotionally-intelligent writing to address relationships from a faith-based perspective.`
+      fullStory: `This handbook provides clarity on deeply misunderstood topics, using Aaron's signature emotionally-intelligent writing to address relationships from a faith-based perspective.`,
+      amazonUrl: "https://www.amazon.com/Submission-Made-Easy-Handbook-Women-ebook/dp/B0BWV333MY"
     },
     {
       id: "the-sons-light",
@@ -88,7 +95,8 @@ export default function Portfolio() {
       description: "Devotional guidance and encouragement for staying in God's light.",
       image: "https://images-na.ssl-images-amazon.com/images/P/B0DRSXPPLX.01.LZZZZZZZ.jpg",
       imageAlt: "The Sons Light Cover",
-      fullStory: `Working diligently with Missionary Brenda Miller to bring her devotional guidance and encouragement into a polished publication.`
+      fullStory: `Working diligently with Missionary Brenda Miller to bring her devotional guidance and encouragement into a polished publication.`,
+      amazonUrl: "https://www.amazon.com/Sons-Light-Devotional-Guidance-Encouragement/dp/B0DRSXPPLX"
     },
     {
       id: "18-years-and-a-day",
@@ -98,7 +106,8 @@ export default function Portfolio() {
       description: "A personal timeline exploring life, healing, and moving forward.",
       image: "https://images-na.ssl-images-amazon.com/images/P/B0DXQ45G6Y.01.LZZZZZZZ.jpg",
       imageAlt: "18 Years and a Day Cover",
-      fullStory: `A captivating timeline of life experiences and wisdom, professionally structured and formatted to guide the reader through an 18-year journey of transformation.`
+      fullStory: `A captivating timeline of life experiences and wisdom, professionally structured and formatted to guide the reader through an 18-year journey of transformation.`,
+      amazonUrl: "https://www.amazon.com.au/18-Years-Day-Aaron-Fikayomi/dp/B0DXQ45G6Y"
     },
     {
       id: "is-disability-truly-a-burden",
@@ -108,7 +117,8 @@ export default function Portfolio() {
       description: "Empowering perspectives on ability, purpose, and changing societal narratives.",
       image: "https://images-na.ssl-images-amazon.com/images/P/9786160118.01.LZZZZZZZ.jpg",
       imageAlt: "Is Disability Truly A Burden Cover",
-      fullStory: `As a multi-award-winning author living with a physical disability, Aaron addresses the narrative around disability directly—teaching caregivers and people living with disabilities how to shift their mindset from burden to blessing.`
+      fullStory: `As a multi-award-winning author living with a physical disability, Aaron addresses the narrative around disability directly—teaching caregivers and people living with disabilities how to shift their mindset from burden to blessing.`,
+      amazonUrl: "https://www.amazon.co.uk/Disability-Burden-Caregivers-People-Living/dp/9786160118"
     },
     {
       id: "spiritual-sentinels",
@@ -118,7 +128,8 @@ export default function Portfolio() {
       description: "A clarion call for family intercession and spiritual guardianship.",
       image: "https://images-na.ssl-images-amazon.com/images/P/B0FGCG2724.01.LZZZZZZZ.jpg",
       imageAlt: "Spiritual Sentinels Cover",
-      fullStory: `We edited and laid out this incredibly powerful book by Brenda Miller focusing on creating strong family intercessors and equipping readers for the spiritual frontline.`
+      fullStory: `We edited and laid out this incredibly powerful book by Brenda Miller focusing on creating strong family intercessors and equipping readers for the spiritual frontline.`,
+      amazonUrl: "https://www.amazon.com/Spiritual-Sentinels-Crusade-Brenda-Miller/dp/B0FGCG2724"
     },
     {
       id: "charityes-garden",
@@ -128,7 +139,8 @@ export default function Portfolio() {
       description: "A delightful story about friendship, faith, and growing together.",
       image: "https://images-na.ssl-images-amazon.com/images/P/B0DT3JSDDY.01.LZZZZZZZ.jpg",
       imageAlt: "Charitye's Garden Cover",
-      fullStory: `A beautifully illustrated and designed children's book that helps instil core values of kindness, community, and friendship in younger readers.`
+      fullStory: `A beautifully illustrated and designed children's book that helps instil core values of kindness, community, and friendship in younger readers.`,
+      amazonUrl: "https://www.amazon.com/Charityes-Garden-Friends-Story-Friendship/dp/B0DT3JSDDY"
     }
   ];
 
@@ -232,13 +244,25 @@ export default function Portfolio() {
                     {item.description}
                   </p>
                 </div>
-                <button
-                  type="button"
-                  onClick={() => setSelectedProject(item)}
-                  className="font-sans text-[11px] font-bold uppercase tracking-widest text-text-dark border-b-2 border-text-dark pb-1 hover:text-primary hover:border-primary transition-all self-start cursor-pointer flex items-center gap-1 group-hover:gap-1.5"
-                >
-                  Read Case Study <ArrowUpRight className="w-3 h-3 text-neutral-400 group-hover:text-primary" />
-                </button>
+                <div className="flex justify-between items-center w-full mt-auto">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedProject(item)}
+                    className="font-sans text-[11px] font-bold uppercase tracking-widest text-text-dark border-b-2 border-text-dark pb-1 hover:text-primary hover:border-primary transition-all cursor-pointer flex items-center gap-1 group-hover:gap-1.5"
+                  >
+                    Read Case Study <ArrowUpRight className="w-3 h-3 text-neutral-400 group-hover:text-primary" />
+                  </button>
+                  {item.amazonUrl && (
+                    <a
+                      href={item.amazonUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-sans text-[11px] font-bold uppercase tracking-widest text-primary hover:text-primary-hover transition-all flex items-center gap-1 border-b-2 border-transparent hover:border-primary pb-1"
+                    >
+                      Amazon <ArrowUpRight className="w-3 h-3" />
+                    </a>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}
@@ -315,11 +339,23 @@ export default function Portfolio() {
                     {selectedProject.fullStory}
                   </div>
 
-                  <div className="pt-4 flex justify-end">
+                  <div className="pt-6 border-t border-neutral-100 flex flex-col sm:flex-row sm:justify-between items-center gap-4">
+                    {selectedProject.amazonUrl ? (
+                      <a
+                        href={selectedProject.amazonUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full sm:w-auto bg-[#FF9900] text-black hover:bg-[#F08800] px-6 py-3 text-xs uppercase tracking-widest font-bold font-sans transition-all text-center flex items-center justify-center gap-2 outline-none cursor-pointer"
+                      >
+                        Buy on Amazon <ArrowUpRight className="w-4 h-4" />
+                      </a>
+                    ) : (
+                      <div className="hidden sm:block" />
+                    )}
                     <button
                       id="close-study-action"
                       onClick={() => setSelectedProject(null)}
-                      className="bg-text-dark text-white px-6 py-3 text-xs uppercase tracking-widest font-bold hover:bg-neutral-800 transition-all outline-none"
+                      className="w-full sm:w-auto bg-text-dark text-white px-6 py-3 text-xs uppercase tracking-widest font-bold hover:bg-neutral-800 transition-all outline-none cursor-pointer"
                     >
                       Close Report
                     </button>
